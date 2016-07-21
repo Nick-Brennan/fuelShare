@@ -15,19 +15,19 @@ begin
 	# deTwo['columns'] = [{"Name" => "Name", "FieldType" => "Text", "IsPrimaryKey" => "true", "MaxLength" => "100", "IsRequired" => "true"},{"Name" => "OtherField", "FieldType" => "Text"}]
 
 	# Call CreateDataExtensions passing in both DataExtension Hashes as an Array
-	createDEResponse = myclient.CreateDataExtensions([NTest_2])
-	p 'CreateDataExtensions Status: ' + createDEResponse.status.to_s
-	p 'Code: ' + createDEResponse.code.to_s
-	p 'Message: ' + createDEResponse.message.to_s
-	p 'Results Length: ' + createDEResponse.results.length.to_s
-	p 'Results: ' + createDEResponse.results.to_s
-  raise 'Failure creating data extensions' unless createDEResponse.success?
+	# createDEResponse = myclient.CreateDataExtensions([NTest_2])
+	# p 'CreateDataExtensions Status: ' + createDEResponse.status.to_s
+	# p 'Code: ' + createDEResponse.code.to_s
+	# p 'Message: ' + createDEResponse.message.to_s
+	# p 'Results Length: ' + createDEResponse.results.length.to_s
+	# p 'Results: ' + createDEResponse.results.to_s
+ #  raise 'Failure creating data extensions' unless createDEResponse.success?
 
  	## Adding a row to the DE
 	  dataextensionrow = FuelSDK::DataExtension::Row.new
 	  dataextensionrow.authStub = myclient
-	  dataextensionrow.Name = 'Nick_Test_2'
-	  dataextensionrow.props = {"Name" => "AnotherName", "OtherField" => "Some other text for the other field"}
+	  dataextensionrow.Name = 'TuesdayTest'
+	  dataextensionrow.props = {"Name" => "Testing", "OtherField" => "On Tuesday"}
 	  res = dataextensionrow.post
 	  p res.results
   # raise 'Failure creating data extensions' unless createDEResponse.results.count == 2
